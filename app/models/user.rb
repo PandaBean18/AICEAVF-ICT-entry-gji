@@ -1,7 +1,14 @@
 class User < ApplicationRecord
-    validates :username, :email, :reigion, :user_type, presence: true
+    validates :username, :email, :reigion, presence: true
     validates :username, uniqueness: true
     validate :check_email, :check_email_not_being_used
+
+    has_many(
+        :psychiatrists_near_user, 
+        class_name: "Psychiatrist",
+        foreign_key: :reigion, 
+        primary_key: :reigion
+    )
     
     private 
 
