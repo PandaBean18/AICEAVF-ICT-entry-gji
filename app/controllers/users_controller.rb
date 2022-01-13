@@ -1,22 +1,34 @@
 class UsersController < ApplicationController
     def create 
-        attributes = user_params
-        begin   
-            user = User.create!(attributes)
-        rescue 
-            render json: User.create!(attributes).errors.full_messages, status: :unprocessable_entity
+        @user = User.new(user_params)
+        if @user.save 
+            redirect_to user_url(@user)
         else 
-            render json: user 
-        end 
+            render :new 
+        end
     end
 
     def show 
         id = params[:id]
-        user = User.find(id)
-        if user 
-            render json: user 
+        @user = User.find(id)
+        if @user 
+            render :show 
         else 
             render json: {}, status: :not_found
+        end
+    end
+
+    def new 
+        render :new
+    end
+
+    def findhelp 
+        user_id = params[:id]
+        @psychiatrists = User.find(user_id).psychiatrists_near_user
+        if @psychiatrists.length > 0 
+            render :findhelp
+        else 
+            render json: "Uh oh! Looks like there are no psychiatrists near you!"
         end
     end
 

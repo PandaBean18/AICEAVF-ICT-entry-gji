@@ -1,0 +1,4 @@
+<h1>Psychiatrists near you!</h1>
+<% @psychiatrists.each do |psychiatrist| %>
+    <h2><a href=" <%= psychiatrist_url(psychiatrist) %> "><%= psychiatrist.name %></a></h2>
+<% end %>
