@@ -8,6 +8,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def index 
+        render :index 
+    end
+
     def show 
         id = params[:id]
         @user = User.find(id)
@@ -30,6 +34,12 @@ class UsersController < ApplicationController
         else 
             render json: "Uh oh! Looks like there are no psychiatrists near you!"
         end
+    end
+
+    def login 
+        username = user_params[:username]
+        user_id = User.find_by(username: username).id
+        redirect_to user_url(user_id)
     end
 
     private
