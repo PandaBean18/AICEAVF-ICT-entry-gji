@@ -1,4 +1,10 @@
 <h1>Psychiatrists near you!</h1>
 <% @psychiatrists.each do |psychiatrist| %>
-    <h2><a href=" <%= psychiatrist_url(psychiatrist) %> "><%= psychiatrist.name %></a></h2>
+    <div class="psych">
+        <h2><a><%= psychiatrist.name %></a></h2>
+        <ul class="psych_info">
+            <li>Email: <%= psychiatrist.email %></li>
+            <li>Reigion: <%= psychiatrist.reigion%></li>
+        </ul>
+    </div>
 <% end %>

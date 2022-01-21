@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         render :new
     end
 
-    def findhelp 
+    def find_help 
         user_id = params[:id]
         @psychiatrists = User.find(user_id).psychiatrists_near_user
         if @psychiatrists.length > 0 

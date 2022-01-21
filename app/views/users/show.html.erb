@@ -1,4 +1,4 @@
-<h1>Username: <%= @user.username %></h1>
+<h1 class="name"><%= @user.username %></h1>
 <ul>
     <li>Email: <%= @user.email %></li>
     <li>Reigion: <%= @user.reigion %></li>
@@ -9,3 +9,5 @@
 <form action="/users/<%= @user.id %>/findhelp" method="get">
     <input type="submit" value="Get help">
 </form>
+
+<footer></footer>

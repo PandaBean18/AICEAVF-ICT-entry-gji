@@ -13,12 +13,18 @@ class PsychiatristsController < ApplicationController
 
     def show 
         id = params[:id]
-        psychiatrist = Psychiatrist.find(id)
-        if psychiatrist
-            render json: psychiatrist
+        @psychiatrist = Psychiatrist.find_by(id: id)
+        if @psychiatrist
+            render :show
         else
             render json: {}, status: :not_found
         end
+    end
+
+    def find_potential_patients
+        psychiatrist_id = params[:id]
+        @users = Psychiatrist.find(psychiatrist_id).users_near_psychiatrist
+        render json: @users
     end
 
     private

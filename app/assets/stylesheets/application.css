@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+    height: 100%;
+ }
+
+ body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    background-image: linear-gradient(purple, pink);
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+ h1 {
+    text-align: center;
+ }
+
+ ul {
+    list-style-type: none;
+ }
+
+.name {
+    color: aliceblue;
+    font-size: xx-large;
+ }
+
+.psych_info {
+    display: none;
+ }
+
+.psych:hover {
+    cursor: default;
+ }
+
+.psych:hover .psych_info{
+    display: block;
+}

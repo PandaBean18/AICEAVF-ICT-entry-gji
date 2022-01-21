@@ -3,6 +3,13 @@ class Psychiatrist < ApplicationRecord
     validates :name, uniqueness: true 
     validate :check_email_not_being_used
 
+    has_many(
+        :users_near_psychiatrist, 
+        class_name: "User", 
+        foreign_key: :reigion,
+        primary_key: :reigion
+    )
+
     private 
 
     def check_email_not_being_used

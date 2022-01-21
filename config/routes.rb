@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :new]
     resources :psychiatrists, only: [:create, :show, :new]
 
-    get "/users/:id/findhelp", to: "users#findhelp"
+    get "/users/:id/findhelp", to: "users#find_help"
     post "/login", to: "users#login"
 end
