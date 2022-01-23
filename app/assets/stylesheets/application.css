@@ -24,6 +24,7 @@
     background-image: linear-gradient(purple, pink);
     background-size: cover;
     background-repeat: no-repeat;
+    margin: 0%;
  }
 
  h1 {
@@ -42,6 +43,10 @@
 .psych_info {
     display: none;
  }
+
+.psych {
+    width: 100%;
+}
 
 .psych:hover {
     cursor: default;
