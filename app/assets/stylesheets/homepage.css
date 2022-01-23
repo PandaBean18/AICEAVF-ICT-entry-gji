@@ -5,3 +5,10 @@
 #our-journey {
     font-size: 6.9vh;
 }
+
+.nav-bar {
+    background-color: black;
+    height: 5px;
+    width:max-content;
+
+}
