@@ -21,7 +21,7 @@
  body {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    background-image: linear-gradient(purple, pink);
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(128, 0, 128));
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0%;
@@ -46,6 +46,8 @@
 
 .psych {
     width: 100%;
+    background-color: aliceblue;
+    color: aqua; 
 }
 
 .psych:hover {

@@ -1,0 +1,9 @@
+<h1>Patients near you!<h1>
+<% @users.each do |user| %>
+    <div class="patient">
+        <h2><%= user.username %></h2>
+        <ul class="patient_info">
+            <li></li>
+        </ul>
+    </div>
+<%end%>
